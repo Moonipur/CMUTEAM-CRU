@@ -21,7 +21,7 @@ EXONs_38='/mnt/hdd/public/share_resource/OS_WES/ichorCNA/inst/extdata/Exon_regio
 
 
 Help() {
-    echo "usage: ./Auto-IchorCNA.sh [-i|n|s|r|c|o|t|h]"
+    echo "usage: ./Auto-IchorCNA.sh [-i|b|n|s|r|c|o|t|h]"
     echo "optional argruments:"
     echo "    -i              Input Tumor file path (BAM file) *Default [all BAM in the current directory]"
     echo "                    If you fill out the BAM path, you should have the .bam.bai file in the same"
