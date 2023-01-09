@@ -111,30 +111,29 @@ else
 fi
 
 #Check BAM.bai of NORMAL and Generate if it NOT exist
-if [[ -e "${normal_bam}" ]];then
-    normal_bai="${normal_bam}.bai"
-    if ! [[ -e "${normal_bai}" ]]; then
-        if [[ "${TMP}" = 'True' ]]; then
-            echo "BAI file is NOT exist" >> ${TMP_path}/01-Check_BAI.log
-            echo "Start to generate BAI file" >> ${TMP_path}/01-Check_BAI.log
-        fi
-        module load samtools
-        samtools index ${normal_bam} ${normal_bam}.bai
-        if [[ "${TMP}" = 'True' ]]; then
-            echo "BAI file Generation already finished" >> ${TMP_path}/01-Check_BAI.log
+if ! [[ -z "${normal_bam}" ]];then
+    if [[ -e "${normal_bam}" ]];then
+        normal_bai="${normal_bam}.bai"
+        if ! [[ -e "${normal_bai}" ]]; then
+            if [[ "${TMP}" = 'True' ]]; then
+                echo "BAI file is NOT exist" >> ${TMP_path}/01-Check_BAI.log
+                echo "Start to generate BAI file" >> ${TMP_path}/01-Check_BAI.log
+            fi
+            module load samtools
+            samtools index ${normal_bam} ${normal_bam}.bai
+            if [[ "${TMP}" = 'True' ]]; then
+                echo "BAI file Generation already finished" >> ${TMP_path}/01-Check_BAI.log
+            fi
+        else
+            if [[ "${TMP}" = 'True' ]]; then
+                echo "BAI file is exist" >> ${TMP_path}/01-Check_BAI.log
+            fi
+
         fi
     else
-        if [[ "${TMP}" = 'True' ]]; then
-            echo "BAI file is exist" >> ${TMP_path}/01-Check_BAI.log
-        fi
-
+        echo -e "Error: normal BAM: ${normal_bam} is NOT exist"
     fi
-else
-    echo -e "Error: normal BAM: ${normal_bam} is NOT exist"
 fi
-
-
-
 
 
 #chromosome type
