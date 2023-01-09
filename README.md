@@ -1,6 +1,7 @@
 # Auto-IchorCNA
 
 # Usage 
+chmod +x Auto-IchorCNA.sh
 ./Auto-IchorCNA.sh [-i|n|s|r|c|o|t|h]
 
 # Optional argruments
