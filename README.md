@@ -5,7 +5,8 @@ chmod +x Auto-IchorCNA.sh
 
 ./Auto-IchorCNA.sh [-i|n|s|r|c|o|t|h]
 
-** example ./Auto-IchorCNA.sh -n WGS-001 -s WGS -r hg38 -t True -c num -o ~/Cancer/path/WGS-001/
+# Example 
+./Auto-IchorCNA.sh -n WGS-001 -s WGS -r hg38 -t True -c num -o ~/Cancer/path/WGS-001/
 
 # Optional argruments
     -i              Input file path (BAM file) *Default [all BAM in the current directory]
