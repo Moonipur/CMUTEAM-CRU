@@ -28,7 +28,7 @@ Help() {
     echo "                    directory. If you choose the default value, this script will check for the"
     echo "                    existence of .bam.bai and generate it if it does not exist."
     echo "    -b              Input normal file path (BAM file) *In case you want to compare with normal."
-    echo "                    This file should NOT exist in same directory with Tumor BAM."
+    echo "                    This file should NOT where in same directory with Tumor BAM."
     echo "    -n              Id name of patient *Default [same as BAM file name]"
     echo "    -s              The type of next generation sequencing methods ('WGS' or 'WES') *Required"
     echo "    -r              Reference genome type ('hg19' or 'hg38') *Required"
