@@ -141,9 +141,8 @@ fi
 
 
 #chromosome type
-if [[ "${chromosome}" = "chr" ]];then
-    chromosome='chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY'
-elif [[ "${chromosome}" = "num" ]];then
+chromosome='chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY'
+if [[ "${chromosome}" = "num" ]];then
     chromosome='1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y'
 fi
 
@@ -160,7 +159,7 @@ ReadCounter_WGS() {
     if [[ "${TMP}" = 'True' ]]; then
         echo "ReadCounter process already finished" >> ${TMP_path}/02-ReadCounter.log
     fi
-    conda deactivate
+    
 
     if ! [[ -z "${normal_bam}" ]];then
         readCounter --window 1000000 \
@@ -168,6 +167,8 @@ ReadCounter_WGS() {
         --chromosome ${chromosome} \
         ${normal_bam} > ${normal_bam}.wig
     fi
+
+    conda deactivate
 }
 
 ReadCounter_WES() {
@@ -182,7 +183,7 @@ ReadCounter_WES() {
     if [[ "${TMP}" = 'True' ]]; then
         echo "ReadCounter process already finished" >> ${TMP_path}/02-ReadCounter.log
     fi
-    conda deactivate
+    
 
     if ! [[ -z "${normal_bam}" ]];then
         readCounter --window 500000 \
@@ -190,6 +191,8 @@ ReadCounter_WES() {
         --chromosome ${chromosome} \
         ${normal_bam} > ${normal_bam}.wig
     fi
+
+    conda deactivate
 }
 #Run ichorCNA
 IchorCNA_WGS_hg19() {
