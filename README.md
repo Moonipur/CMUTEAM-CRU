@@ -1,29 +1,33 @@
-# Auto-IchorCNA
+# Classify_Annotation
 
-# Usage 
-chmod +x Auto-IchorCNA.sh
+  CNV_annotation is a software suite script that uses the ACE and ClassifyCNV packages
+for annotating gains and losses of CNVs and predicting list of dosage-sensitive genes
+that affect as pathogenic variant.
 
-./Auto-IchorCNA.sh [-i|b|n|s|r|c|o|t|h]
+# Installation:
 
-# Example 
-./Auto-IchorCNA.sh -n WGS-001 -s WGS -r hg38 -t True -c num -o ~/Cancer/path/WGS-001/
+  chmod +x *
 
-# Optional argruments
-    -i              Input file path (BAM file) *Default [all BAM in the current directory]
-                    If you fill out the BAM path, you should have the .bam.bai file in the same
-                    directory. If you choose the default value, this script will check for the
-                    existence of .bam.bai and generate it if it does not exist.
-    -b              Input normal file path (BAM file) *In case you want to compare with normal.
-                    This file should NOT where in same directory with Tumor BAM.
-    -n              Id name of patient *Default [same as BAM file name]
-    -s              The type of next generation sequencing methods ('WGS' or 'WES') *Required
-    -r              Reference genome type ('hg19' or 'hg38') *Required
-    -c              chromosome name ('num' or 'chr') *Default [chr]
-    -o              Output directory path *Default [current directory]
-    -t              Temporary output (True or False) *Default [False]
-    -h              Show this help message and exit
+  ./Install.sh
 
-# Author's email
-    songphon_sutthittha@cmu.ac.th
-    
+  source ~/.bashrc (find your .bashrc path before use source command)
+
+# Usage:
+
+  CNV_annotation [-i|-o|-r|h]
+
+# Optional argruments:
+
+  -i       Input file path (BAM file)
+
+  -o       Output directory path (/path/of/output/directory/), Default is the currect directory
+
+  -r       Type of reference human genome (hg19/hg38)
+
+  -h       Show this help message and exit
+
+# Author's email:
+
+  songphon_sutthittha@cmu.ac.th
+
 ** Please contact us if you have any questions or problems with this script.
