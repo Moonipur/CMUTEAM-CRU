@@ -9,7 +9,7 @@ slash=$((${count_slash} + 1))
 new_BAM=`echo ${BAM} | cut -d/ -f ${slash} | cut -d. -f 1`
 
 #Check type of Sizeselection
-if ![[ "$2" = "All" ]]; then
+if ![[ "$2" = "Both" ]]; then
     if [[ "$2" = "150" OR "$2" = "167" ]]; then
         size=$2
     else
@@ -17,7 +17,7 @@ if ![[ "$2" = "All" ]]; then
         exit
     fi
 else
-    size="All"
+    size="Both"
 fi
 
 #Check similar directory
@@ -63,7 +63,7 @@ if [[ ${size} = 150 ]]; then
 elif [[ ${size} = 167 ]]; then
     Sort167()
     More167()
-elif [[ ${size} = "All" ]]; then
+elif [[ ${size} = "Both" ]]; then
     Sort150()
     Sort167()
     More150()
