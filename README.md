@@ -7,4 +7,4 @@
   
   # Option
   
-    cut-off size: be avilable at 150 and 167 only [default: All]
+    cut-off size: be avilable at 150 and 167 only [default: Both]
