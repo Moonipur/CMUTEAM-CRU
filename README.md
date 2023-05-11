@@ -1,6 +1,6 @@
 # cfDNA size selection
 
-# Command
+  # Command
 
   SizeSelection [bam_path] [cut-off size] [out_dir]
   
